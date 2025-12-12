@@ -1,5 +1,5 @@
-import { CreateEntryDto, UpdateEntryDto } from "../dtos";
-import { EntryEntity } from "../entities/entries/entry.entity";
+import { CreateEntryDto, UpdateEntryDto } from "../../dtos";
+import { EntryEntity } from "../../entities/entries/entry.entity";
 
 
 export abstract class EntryRepository {

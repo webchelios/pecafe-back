@@ -1,2 +1,2 @@
-export * from './movies/create-entry.dto'
-export * from './movies/update-entry.dto'
+export * from './entries/create-entry.dto'
+export * from './entries/update-entry.dto'

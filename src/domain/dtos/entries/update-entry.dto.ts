@@ -1,8 +1,8 @@
 export class UpdateEntryDto {
     private constructor(
         public id: number,
-        public title: string,
-        public content: string,
+        public title?: string,
+        public content?: string,
         public author?: string,
         public image?: string,
 

@@ -12,6 +12,7 @@ export class CreateEntryDto {
 
         if (!title) return ['Title property is required', undefined];
         if (!content) return ['Content property is required', undefined];
+        // TODO: Eliminar las validaciones de abajo generan un error en pr
         if (!author) return ['Author property is required', undefined];
         if (!image) return ['Image property is required', undefined];
 

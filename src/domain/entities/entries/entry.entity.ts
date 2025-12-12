@@ -4,7 +4,5 @@ export class EntryEntity {
         public content: string,
         public author: string,
         public image: string,
-        public status: boolean,
-        public _id?: string,
     ) { }
 }

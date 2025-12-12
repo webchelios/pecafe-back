@@ -2,7 +2,7 @@ export class CreateEntryDto {
     private constructor(
         public title: string,
         public content: string,
-        public author: string,
+        public author?: string,
         public image?: string,
 
     ) { }

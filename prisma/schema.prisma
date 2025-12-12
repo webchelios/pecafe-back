@@ -17,6 +17,6 @@ model entry {
   id      Int     @id @default(autoincrement())
   title   String  @db.VarChar
   content String  @db.VarChar
-  author  String  @db.VarChar
+  author  String? @db.VarChar
   image   String? @db.VarChar
 }

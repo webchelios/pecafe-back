@@ -155,11 +155,11 @@ export type EntryAggregateArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 export type GetEntryAggregateType<T extends EntryAggregateArgs> = {
-      [P in keyof T & keyof AggregateEntry]: P extends '_count' | 'count'
-    ? T[P] extends true
-      ? number
-      : Prisma.GetScalarType<T[P], AggregateEntry[P]>
-    : Prisma.GetScalarType<T[P], AggregateEntry[P]>
+  [P in keyof T & keyof AggregateEntry]: P extends '_count' | 'count'
+  ? T[P] extends true
+  ? number
+  : Prisma.GetScalarType<T[P], AggregateEntry[P]>
+  : Prisma.GetScalarType<T[P], AggregateEntry[P]>
 }
 
 
@@ -195,15 +195,15 @@ export type EntryGroupByOutputType = {
 type GetEntryGroupByPayload<T extends entryGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<EntryGroupByOutputType, T['by']> &
-      {
-        [P in ((keyof T) & (keyof EntryGroupByOutputType))]: P extends '_count'
-          ? T[P] extends boolean
-            ? number
-            : Prisma.GetScalarType<T[P], EntryGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], EntryGroupByOutputType[P]>
-      }
-    >
+    {
+      [P in ((keyof T) & (keyof EntryGroupByOutputType))]: P extends '_count'
+      ? T[P] extends boolean
+      ? number
+      : Prisma.GetScalarType<T[P], EntryGroupByOutputType[P]>
+      : Prisma.GetScalarType<T[P], EntryGroupByOutputType[P]>
+    }
   >
+>
 
 
 
@@ -272,8 +272,8 @@ export type entryUncheckedCreateInput = {
   id?: number
   title: string
   content: string
-  author: string
-  image: string
+  author?: string
+  image?: string
 }
 
 export type entryUpdateInput = {
@@ -675,10 +675,10 @@ export interface entryDelegate<ExtArgs extends runtime.Types.Extensions.Internal
     args?: Prisma.Subset<T, entryCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
-      ? T['select'] extends true
-        ? number
-        : Prisma.GetScalarType<T['select'], EntryCountAggregateOutputType>
-      : number
+    ? T['select'] extends true
+    ? number
+    : Prisma.GetScalarType<T['select'], EntryCountAggregateOutputType>
+    : number
   >
 
   /**
@@ -732,8 +732,8 @@ export interface entryDelegate<ExtArgs extends runtime.Types.Extensions.Internal
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: entryGroupByArgs['orderBy'] }
-      : { orderBy?: entryGroupByArgs['orderBy'] },
+    ? { orderBy: entryGroupByArgs['orderBy'] }
+    : { orderBy?: entryGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -744,49 +744,49 @@ export interface entryDelegate<ExtArgs extends runtime.Types.Extensions.Internal
     ? `Error: "by" must not be empty.`
     : HavingValid extends Prisma.False
     ? {
-        [P in HavingFields]: P extends ByFields
-          ? never
-          : P extends string
-          ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-          : [
-              Error,
-              'Field ',
-              P,
-              ` in "having" needs to be provided in "by"`,
-            ]
-      }[HavingFields]
+      [P in HavingFields]: P extends ByFields
+      ? never
+      : P extends string
+      ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+      : [
+        Error,
+        'Field ',
+        P,
+        ` in "having" needs to be provided in "by"`,
+      ]
+    }[HavingFields]
     : 'take' extends Prisma.Keys<T>
     ? 'orderBy' extends Prisma.Keys<T>
-      ? ByValid extends Prisma.True
-        ? {}
-        : {
-            [P in OrderFields]: P extends ByFields
-              ? never
-              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-          }[OrderFields]
-      : 'Error: If you provide "take", you also need to provide "orderBy"'
+    ? ByValid extends Prisma.True
+    ? {}
+    : {
+      [P in OrderFields]: P extends ByFields
+      ? never
+      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+    }[OrderFields]
+    : 'Error: If you provide "take", you also need to provide "orderBy"'
     : 'skip' extends Prisma.Keys<T>
     ? 'orderBy' extends Prisma.Keys<T>
-      ? ByValid extends Prisma.True
-        ? {}
-        : {
-            [P in OrderFields]: P extends ByFields
-              ? never
-              : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-          }[OrderFields]
-      : 'Error: If you provide "skip", you also need to provide "orderBy"'
+    ? ByValid extends Prisma.True
+    ? {}
+    : {
+      [P in OrderFields]: P extends ByFields
+      ? never
+      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+    }[OrderFields]
+    : 'Error: If you provide "skip", you also need to provide "orderBy"'
     : ByValid extends Prisma.True
     ? {}
     : {
-        [P in OrderFields]: P extends ByFields
-          ? never
-          : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-      }[OrderFields]
+      [P in OrderFields]: P extends ByFields
+      ? never
+      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+    }[OrderFields]
   >(args: Prisma.SubsetIntersection<T, entryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEntryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-/**
- * Fields of the entry model
- */
-readonly fields: entryFieldRefs;
+  /**
+   * Fields of the entry model
+   */
+  readonly fields: entryFieldRefs;
 }
 
 /**
@@ -832,7 +832,7 @@ export interface entryFieldRefs {
   readonly author: Prisma.FieldRef<"entry", 'String'>
   readonly image: Prisma.FieldRef<"entry", 'String'>
 }
-    
+
 
 // Custom InputTypes
 /**
